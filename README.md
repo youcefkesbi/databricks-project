@@ -8,7 +8,7 @@ This pipeline ingests, harmonizes, and consolidates operational data from both e
 
 ## Architecture Overview
 
-Operational OLTP sales data from the acquired child entity (SportsBar) is staged into Amazon S3, ingested via Databricks Lakeflow Jobs, processed through Bronze and Silver layers, and aggregated into a Gold analytics layer aligned with the parent organization (Atlikon)[cite: 2].
+Operational OLTP sales data from the acquired child entity (SportsBar) is staged into Amazon S3, ingested via Databricks Lakeflow Jobs, processed through Bronze and Silver layers, and aggregated into a Gold analytics layer aligned with the parent organization.
 
 
 <img width="1388" height="604" alt="tech-architecture" src="https://github.com/user-attachments/assets/d0d3095d-69cf-43fc-a9bf-9a85b67dd63f" />
@@ -16,13 +16,13 @@ Operational OLTP sales data from the acquired child entity (SportsBar) is staged
 
 ### Components
 
-* **Source Layer (OLTP):** SportsBar transactional database emitting nutritional product sales and order streams[cite: 2].
-* **Storage Layer (AWS S3):** Object store managing incoming raw files and point-in-time archives (`s3://.../raw_data/` and `s3://.../archive/`)[cite: 2].
-* **Processing & Governance:** PySpark on Databricks governed centrally via **Unity Catalog** for access control and end-to-end lineage tracking[cite: 2].
-* **Orchestration:** **Databricks Lakeflow Jobs** automating extraction, bronze-to-gold transformations, and data quality validations[cite: 2].
+* **Source Layer (OLTP):** SportsBar transactional database emitting nutritional product sales and order streams.
+* **Storage Layer (AWS S3):** Object store managing incoming raw files and point-in-time archives (`s3://.../raw_data/` and `s3://.../archive/`).
+* **Processing & Governance:** PySpark on Databricks governed centrally via **Unity Catalog** for access control and end-to-end lineage tracking.
+* **Orchestration:** **Databricks Lakeflow Jobs** automating extraction, bronze-to-gold transformations, and data quality validations.
 * **Serving Layer:**
-  * **BI Dashboards:** Reporting on post-acquisition revenue, customer adoption, and order volumes[cite: 2].
-  * **Databricks Genie:** Conversational natural-language interface allowing stakeholders to query combined metrics[cite: 2].
+  * **BI Dashboards:** Reporting on post-acquisition revenue, customer adoption, and order volumes.
+  * **Databricks Genie:** Conversational natural-language interface allowing stakeholders to query combined metrics.
 
 ---
 
